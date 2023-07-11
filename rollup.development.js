@@ -8,10 +8,16 @@ import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: "src/index.js",
+  external: [
+    'react',
+    'react-proptypes',
+    'rechards',
+    'styled-components',
+  ],
+  input: "src/example-recharts.js",
   output: {
-    file: "dist/bundle.js",
-    format: "iife",
+    file: "public/bundle.js",
+    format: "es",
     sourcemap: true,
   },
   plugins: [
@@ -28,14 +34,6 @@ export default {
     babel({
       presets: ["@babel/preset-react"],
     }),
-    commonjs(),
-    serve({
-      open: true,
-      verbose: true,
-      contentBase: ["", "public"],
-      host: "localhost",
-      port: 3000,
-    }),
-    livereload({ watch: "dist" }),
+    commonjs()
   ]
 };

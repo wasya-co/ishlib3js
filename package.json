@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "description": "Exploring how to bundle react app using rollup.js",
   "main": "index.js",
-  "scripts": {
-    "start": "rollup -c rollup.config.js -w"
-  },
   "author": "Nathan Sebhastian",
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "recharts": "^2.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
@@ -24,5 +22,9 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-postcss": "https://github.com/isaacl/rollup-plugin-postcss",
     "rollup-plugin-serve": "^1.1.0"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.development.js",
+    "start": "rollup -c rollup.config.js -w"
   }
 }

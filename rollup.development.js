@@ -11,6 +11,7 @@ export default {
   external: [
     'react',
     'react-proptypes',
+    'react-dom',
     'rechards',
     'styled-components',
   ],

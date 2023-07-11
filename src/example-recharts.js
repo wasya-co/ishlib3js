@@ -48,11 +48,23 @@ const data = [
   },
 ];
 
+const A = (props) => {
+  return <div style={{ border: '1px solid red' }} className='descr'>
+    { props.children }
+  </div>
+}
+
 const Example = (props) => {
-  return <div>Hello 333!</div>
+  // console.log(Recharts);
+
+  /* this works */
+  // return <div>
+  //   <A>world?!</A>
+  //   Hello 333!
+  // </div>
 
   return <div>
-    <LineChart
+    <Recharts.LineChart
       width={500}
       height={300}
       data={data}
@@ -63,42 +75,12 @@ const Example = (props) => {
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-    </LineChart>
+      <Recharts.XAxis dataKey="name" />
+      <Recharts.YAxis />
+      <Recharts.Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+      <Recharts.Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    </Recharts.LineChart>
   </div>
 }
 export default Example
 
-// class Example extends PureComponent {
-//   render() {
-//     return (
-//       <ResponsiveContainer width="100%" height="100%">
-//         <LineChart
-//           width={500}
-//           height={300}
-//           data={data}
-//           margin={{
-//             top: 5,
-//             right: 30,
-//             left: 20,
-//             bottom: 5,
-//           }}
-//         >
-//           <CartesianGrid strokeDasharray="3 3" />
-//           <XAxis dataKey="name" />
-//           <YAxis />
-//           <Tooltip />
-//           <Legend />
-//           <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-//           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-//         </LineChart>
-//       </ResponsiveContainer>
-//     );
-//   }
-// }

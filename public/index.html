@@ -6,14 +6,30 @@
     <title>React - Rollup Test</title>
 
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
+    <!-- <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script> -->
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+
+    <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
 
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type='module' src="./bundle.js"></script>
+    <!-- <script type='module' src="./bundle.js"></script> -->
+    <script type='module' src="./recharts-example-out.js"></script>
+    <script type='module' >
+      import App from './recharts-example-out.js';
+      // import { createRoot } from 'react-dom/client';
+
+      const el = document.querySelector('#root')
+      const e = React.createElement;
+
+      const domContainer = document.querySelector('#root');
+      const root = ReactDOM.createRoot(domContainer);
+      root.render(e(App));
+    </script>
   </body>
 </html>

@@ -12,7 +12,7 @@ export default {
     'react',
     'react-proptypes',
     'react-dom',
-    'rechards',
+    'recharts',
     'styled-components',
   ],
   input: "src/example-recharts.js",

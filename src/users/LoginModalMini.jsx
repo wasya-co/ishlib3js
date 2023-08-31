@@ -6,7 +6,7 @@ import useApi from '/bundle-api.js';
  * LoginModalMini
 **/
 const LoginModalMini = (props) => {
-  logg(props, 'ishlib3js::LoginModalMini')
+  // logg(props, 'ishlib3js::LoginModalMini')
 
   const [ email, setEmail ] = React.useState('')
   const [ password, setPassword ] = React.useState('')
@@ -21,7 +21,7 @@ const LoginModalMini = (props) => {
   }
 
 
-  return <div style={{ border: '1px solid green;' }} >
+  return <div style={{ border: '1px solid green' }} >
     <h1>Login</h1>
     <label htmlFor='email'>Email</label>
     <input name='email' type='email' value={email} onChange={(e) => setEmail(e.target.value)    } />

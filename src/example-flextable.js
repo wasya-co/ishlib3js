@@ -19,7 +19,7 @@ const Flextable = (props) => {
   // get the data
   const [ data, setData ] = React.useState([])
   React.useEffect(() => {
-    api.getLeads({ tag_slug: '202307-MDE' }).then(r => r.json).then( inns => {
+    api.getLeads({ tag_slug: '202307-MDE' }).then(inns => {
       logg(inns, 'inns')
 
       setData(inns)
@@ -28,7 +28,26 @@ const Flextable = (props) => {
 
   return <div>
     <LoginModalMini />
-    Data: { data }
+
+    <table>
+      <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Rating1</th>
+        <th>Comments</th>
+        <th>More info</th>
+      </tr>
+      { data.map((i,idx) => <tr key={idx} >
+        <td>{ i.photo }</td>
+        <td>{ i.name }</td>
+        <td>{ i.rating }</td>
+        <td>{ i.rating1 }</td>
+        <td>{ i.comments }</td>
+        <td>{ i.more_info }</td>
+      </tr> )}
+    </table>
+
   </div>
 
 }

@@ -27,9 +27,13 @@ const useApi = () => {
       ).then((r) => r.data.gallery)
     },
     getLeads: (props) => {
-      logg(props, 'getLeads()')
+      // logg(props, 'getLeads()')
+
       return request.get(`${config.apiOrigin}/api/leads/?jwt_token=${token}`
-      ).then((r) => r.data.items)
+      ).then((r) => {
+        // logg(r.data.items, 'got these items')
+        return r.data.items
+      })
     },
     getLocation: (props) => { // _vp_ 2022-09-04
       const {

@@ -19,12 +19,14 @@ const Flextable = props => {
   React.useEffect(() => {
     api.getLeads({
       tag_slug: '202307-MDE'
-    }).then(r => r.json).then(inns => {
+    }).then(inns => {
       logg(inns, 'inns');
       setData(inns);
     });
   }, []);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(LoginModalMini, null), "Data: ", data);
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(LoginModalMini, null), /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Photo"), /*#__PURE__*/React.createElement("th", null, "Name"), /*#__PURE__*/React.createElement("th", null, "Rating"), /*#__PURE__*/React.createElement("th", null, "Rating1"), /*#__PURE__*/React.createElement("th", null, "Comments"), /*#__PURE__*/React.createElement("th", null, "More info")), data.map((i, idx) => /*#__PURE__*/React.createElement("tr", {
+    key: idx
+  }, /*#__PURE__*/React.createElement("td", null, i.photo), /*#__PURE__*/React.createElement("td", null, i.name), /*#__PURE__*/React.createElement("td", null, i.rating), /*#__PURE__*/React.createElement("td", null, i.rating1), /*#__PURE__*/React.createElement("td", null, i.comments), /*#__PURE__*/React.createElement("td", null, i.more_info)))));
 };
 
 export { Flextable as default };

@@ -5,9 +5,10 @@ import useApi from '../../../../../../../bundle-api.js';
  * LoginModalMini
 **/
 const LoginModalMini = props => {
-  logg(props, 'ishlib3js::LoginModalMini');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // logg(props, 'ishlib3js::LoginModalMini')
+
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
   const api = useApi();
   const doPasswordLogin = async (email, password) => {
     api.postLogin({
@@ -21,7 +22,7 @@ const LoginModalMini = props => {
   };
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      border: '1px solid green;'
+      border: '1px solid green'
     }
   }, /*#__PURE__*/React.createElement("h1", null, "Login"), /*#__PURE__*/React.createElement("label", {
     htmlFor: "email"

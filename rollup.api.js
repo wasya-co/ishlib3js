@@ -15,10 +15,9 @@ export default {
     'recharts',
     'styled-components',
   ],
-  // input: "src/example-recharts.js",
-  input: "src/example-flextable.js",
+  input: "src/index-api.js",
   output: {
-    file: "public/bundle-flextable.js",
+    file: "public/bundle-api.js",
     format: "es",
     sourcemap: true,
   },

@@ -9,16 +9,16 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
   external: [
+    'axios',
     'react',
     'react-proptypes',
     'react-dom',
     'recharts',
     'styled-components',
   ],
-  // input: "src/example-recharts.js",
-  input: "src/example-flextable.js",
+  input: "src/index-shared.js",
   output: {
-    file: "public/bundle-flextable.js",
+    file: "public/bundle-shared.js",
     format: "es",
     sourcemap: true,
   },

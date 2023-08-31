@@ -48,11 +48,6 @@ const data = [
   },
 ];
 
-const A = (props) => {
-  return <div style={{ border: '1px solid red' }} className='descr'>
-    { props.children }
-  </div>
-}
 
 const Example = (props) => {
   // console.log(Recharts);

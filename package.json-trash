@@ -1,0 +1,7 @@
+  "dependencies": {
+    "recharts": "^2.7.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },

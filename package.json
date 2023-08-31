@@ -6,9 +6,6 @@
   "author": "Nathan Sebhastian",
   "license": "MIT",
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "recharts": "^2.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
@@ -24,7 +21,9 @@
     "rollup-plugin-serve": "^1.1.0"
   },
   "scripts": {
-    "build": "rollup -c rollup.development.js",
-    "start": "rollup -c rollup.config.js -w"
+    "build":        "rollup -c rollup.development.js -i ./src/users/LoginModalMini.jsx -o ./public/bundle-login_modal_mini.js",
+    "build_api":    "rollup -c rollup.api.js         -w",
+    "build_shared": "rollup -c rollup.shared.js      -w",
+    "start":        "rollup -c rollup.development.js -w"
   }
 }

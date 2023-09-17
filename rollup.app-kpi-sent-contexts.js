@@ -15,12 +15,11 @@ export default {
     'recharts',
     'styled-components',
   ],
-  // input: "src/example-recharts.js",
-  input: "src/example-flextable.js",
+  input: "src/AppKpiSentContexts.js",
   output: {
-    file: "public/bundle-flextable.js",
+    file: "public/bundle-kpi-sent-contexts.js",
     format: "es",
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     image(),

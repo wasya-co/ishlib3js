@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KPI // Sent Contexts</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script> -->
+  <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+
+
+</head>
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+
+<script type='module' src="/config.js"></script>
+<script type='module' src="./bundle-shared.js"></script>
+<script type='module' src="./bundle-api.js"></script>
+<!-- <script type='module' src="./bundle-login_modal_mini.js"></script> -->
+<script type='module' src="./bundle-kpi-sent-contexts.js"></script>
+
+<script type='module' >
+  import App from './bundle-kpi-sent-contexts.js';
+  const e  = React.createElement;
+  const domContainer = document.querySelector('#root');
+  const root = ReactDOM.createRoot(domContainer);
+  root.render(e(App));
+</script>
+
+</body></html>
+

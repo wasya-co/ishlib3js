@@ -3,11 +3,11 @@ import useApi from '../../../../../../bundle-api.js';
 import LoginModalMini from '../../../../../../bundle-login_modal_mini.js';
 
 /**
- * Flextable
+ * Flextable, a main app
  *
  * foto, name, rating, rating1, comments, and more info
 **/
-const Flextable = props => {
+const AppFlextable = props => {
   // logg(props, 'Flextable');
 
   const api = useApi();
@@ -29,5 +29,5 @@ const Flextable = props => {
   }, /*#__PURE__*/React.createElement("td", null, i.photo), /*#__PURE__*/React.createElement("td", null, i.name), /*#__PURE__*/React.createElement("td", null, i.rating), /*#__PURE__*/React.createElement("td", null, i.rating1), /*#__PURE__*/React.createElement("td", null, i.comments), /*#__PURE__*/React.createElement("td", null, i.more_info)))));
 };
 
-export { Flextable as default };
+export { AppFlextable as default };
 //# sourceMappingURL=bundle-flextable.js.map

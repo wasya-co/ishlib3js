@@ -1,6 +1,9 @@
 
 
-const AChart = (props) => {
+/**
+ * A main app, but obsolete.
+**/
+const AppChart = (props) => {
   logg(props, 'AChart')
   const {
     symbol, fromDate, toDate,
@@ -25,5 +28,5 @@ const AChart = (props) => {
       </LineChart>
   </div>
 }
-export default AChart
+export default AppChart
 

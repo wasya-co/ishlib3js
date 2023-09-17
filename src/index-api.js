@@ -26,6 +26,15 @@ const useApi = () => {
       return request.get(`${config.apiOrigin}/api/galleries/view/${slug}?jwt_token=${token}`
       ).then((r) => r.data.gallery)
     },
+
+    getKpiSentContexts: (props) => {
+      return request.get(`${config.apiOrigin}/api/email_contexts/summary.json?jwt_token=${token}`
+      ).then((r) => {
+        // logg(r.data.items, 'got these items')
+        return r.data.items
+      })
+    },
+
     getLeads: (props) => {
       // logg(props, 'getLeads()')
 
@@ -101,3 +110,6 @@ const useApi = () => {
 }
 
 export default useApi
+export {
+  useApi,
+}

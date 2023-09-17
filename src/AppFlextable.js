@@ -5,11 +5,11 @@ import useApi from '/bundle-api.js';
 import LoginModalMini from '/bundle-login_modal_mini.js';
 
 /**
- * Flextable
+ * Flextable, a main app
  *
  * foto, name, rating, rating1, comments, and more info
 **/
-const Flextable = (props) => {
+const AppFlextable = (props) => {
   // logg(props, 'Flextable');
 
   const api = useApi()
@@ -51,4 +51,4 @@ const Flextable = (props) => {
   </div>
 
 }
-export default Flextable
+export default AppFlextable

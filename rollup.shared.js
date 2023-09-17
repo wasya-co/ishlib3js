@@ -20,7 +20,7 @@ export default {
   output: {
     file: "public/bundle-shared.js",
     format: "es",
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     image(),

@@ -24,8 +24,9 @@
     "build":        "rollup -c rollup.development.js -i ./src/users/LoginModalMini.jsx -o ./public/bundle-login_modal_mini.js",
     "build-api":    "rollup -c rollup.api.js",
     "watch-api":    "rollup -c rollup.api.js -w",
-    "build_kpi_1":  "rollup -c rollup.app-kpi-sent-contexts.js -w",
-    "build_shared": "rollup -c rollup.shared.js      -w",
+    "watch-calendar": "rollup -c rollup.calendar.js -w",
+    "build-kpi_1":  "rollup -c rollup.app-kpi-sent-contexts.js -w",
+    "build-shared": "rollup -c rollup.shared.js      -w",
     "start":        "rollup -c rollup.development.js -w"
   }
 }

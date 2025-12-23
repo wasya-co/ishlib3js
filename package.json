@@ -5,8 +5,7 @@
   "main": "index.js",
   "author": "Nathan Sebhastian",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
@@ -18,14 +17,19 @@
     "rollup": "^2.39.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-postcss": "https://github.com/isaacl/rollup-plugin-postcss",
-    "rollup-plugin-serve": "^1.1.0"
+    "rollup-plugin-serve": "^1.1.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
   "scripts": {
-    "build":        "rollup -c rollup.development.js -i ./src/users/LoginModalMini.jsx -o ./public/bundle-login_modal_mini.js",
-    "build-api":    "rollup -c rollup.api.js",
-    "watch-api":    "rollup -c rollup.api.js -w",
-    "build_kpi_1":  "rollup -c rollup.app-kpi-sent-contexts.js -w",
+    "build": "rollup -c rollup.development.js -i ./src/users/LoginModalMini.jsx -o ./public/bundle-login_modal_mini.js",
+    "build-api": "rollup -c rollup.api.js",
+    "watch-api": "rollup -c rollup.api.js -w",
+    "build_kpi_1": "rollup -c rollup.app-kpi-sent-contexts.js -w",
     "build_shared": "rollup -c rollup.shared.js      -w",
-    "start":        "rollup -c rollup.development.js -w"
+    "start": "rollup -c rollup.development.js -w",
+    "start2": "webpack serve",
+    "translate_example": ""
   }
 }

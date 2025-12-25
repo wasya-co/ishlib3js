@@ -5,7 +5,12 @@
   "main": "index.js",
   "author": "Nathan Sebhastian",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "gl": "^8.1.6",
+    "puppeteer": "^24.34.0",
+    "three": "^0.182.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-react": "^7.12.13",

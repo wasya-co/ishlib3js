@@ -27,6 +27,7 @@
 </head>
 <body>
   <h1 class='center text-center'>{{ label }}</h1>
+  <button id='speak'>Speak</button>
   <div id='avatar'></div>
   <div id='loading'>Loading...</div>
   <div id="rotatingC" class="r2" style="width: 640px;
@@ -36,15 +37,25 @@
   </div>
 
   <script type="module">
+    const logg = (a, b="", c=null) => {
+      if ('undefined' === typeof window) { return }
+
+      c = "string" === typeof c ? c : b.replace(/\W/g, "");
+      if (c.length > 0) {
+        window[c] = a;
+      }
+      console.log(`+++ ${b}:`, a); // eslint-disable-line no-console
+    };
 
     import * as THREE from 'three';
 
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-    // import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
-    // import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
     import { TalkingHead } from "talkinghead";
+
+    const params = new URLSearchParams(window.location.search);
+    logg(params, 'params')
 
     const w = 640;
     const h = 480;
@@ -57,32 +68,18 @@
         waitForAudioChunks: false,
         enableMetrics: false,
       };
+    const FPS = 30;
+    let frame = 0;
 
-    const logg = (a, b="", c=null) => {
-      if ('undefined' === typeof window) { return }
-
-      c = "string" === typeof c ? c : b.replace(/\W/g, "");
-      if (c.length > 0) {
-        window[c] = a;
-      }
-      console.log(`+++ ${b}:`, a); // eslint-disable-line no-console
-    };
 
     let camera, controls, head, renderer, scene;
-    var capturer = new CCapture( { format: 'webm' } );
-    const clock = new THREE.Clock();
-
-    let chunkedInput = {
-            "phonemes":["ə","l","O","m","I","n","A","m","ɪ","z","æ","l","ɪ","s"],
-            "words":["Hello, ","my ","name ","is ","Alice"],
-            "wtimes":[449,984,1104,1268,1428],
-            "wdurations":[555,140,184,180,715],
-            "visemes":["E","RR","O","PP","I","nn","E","PP","I","SS","aa","RR","I","SS"],
-            "vtimes":[499,550,601,984,1011,1104,1129,1217,1268,1336,1428,1551,1624,1709],
-            "vdurations":[71,71,294,47,87,45,108,46,88,60,143,93,105,434],
-            "audioEncoding":"wav" }
+    var capturer = new CCapture( { format: 'webm', framerate: FPS } );
 
     async function init() {
+      const url = params.get('input_url')
+      let chunkedInput = await fetch(url).then(r => r.json())
+      logg(chunkedInput, 'chunkedInput')
+
       // const container = document.createElement( 'div' )
       const loader = new GLTFLoader().setPath( '/2025/vendor/obj' )
       scene = new THREE.Scene();
@@ -92,9 +89,9 @@
        * near — Camera frustum near plane.
        * far — Camera frustum far plane.
       **/
-      camera = new THREE.PerspectiveCamera( 45, w/h, 0.1, 10 )
-      // camera.position.set( -18, 6, 27 )
-      camera.position.set( 0, 2, 2 )
+      camera = new THREE.PerspectiveCamera( 10, w/h, 0.1, 10 )
+      camera.position.set( 1.86, 1.44, 1.00 )
+      camera.rotation.set( -.06, 0.73, 0.04 )
 
       const ambientLight = new THREE.AmbientLight( 0xffffff );
       scene.add( ambientLight );
@@ -119,10 +116,10 @@
         lipsyncModules: ["en"],
         // cameraView: "upper",
         // update: function () {
-        //   capturer.capture( nodeAvatar );
+        //   capturer.capture( renderer.domElement );
         // }
       });
-      logg(head, 'head')
+      // logg(head, 'head')
 
 
 
@@ -142,29 +139,24 @@
         });
         nodeLoading.style.display = 'none';
 
+        head.armature.position.set(0,-3,0);
+        head.armature.rotation.set(0,1,0);
+        scene.add(head.armature);
 
-        setTimeout(() => {
-          logg(head.armature.position, 'position')
+        await head.streamStart({
+              sampleRate: config.sampleRate,
+              mood: config.mood,
+              gain: config.gain,
+              lipsyncType: config.lipsyncType,
+              lipsyncLang: config.lipsyncLang,
+              waitForAudioChunks: config.waitForAudioChunks,
+              // Configure metrics: enabled/disabled and reporting rate
+              metrics: config.enableMetrics ? { enabled: true, intervalHz: config.metricsInterval } : { enabled: false }
+            })
 
-          head.armature.position.set(1,0,0);
-          head.armature.rotation.set(0,0.5,0);
-          scene.add(head.armature);
-
-
-        }, 2 * 1000)
-        // render()
-
-        // capturer.start();
-        // head.streamStart({
-        //     sampleRate: config.sampleRate,
-        //     mood: config.mood,
-        //     gain: config.gain,
-        //     lipsyncType: config.lipsyncType,
-        //     lipsyncLang: config.lipsyncLang,
-        //     waitForAudioChunks: config.waitForAudioChunks,
-        //     // Configure metrics: enabled/disabled and reporting rate
-        //     metrics: config.enableMetrics ? { enabled: true, intervalHz: config.metricsInterval } : { enabled: false }
-        //   })
+        capturer.start();
+        logg('capturer.start')
+        head.streamAudio(chunkedInput);
 
       } catch (error) {
         console.log(error);
@@ -175,7 +167,7 @@
       //
 
       renderer = new THREE.WebGLRenderer( {
-        alpha: true,
+        alpha: false,
         antialias: true,
       } );
       renderer.setPixelRatio( window.devicePixelRatio );
@@ -199,11 +191,8 @@
       window.addEventListener( 'resize', onWindowResize );
 
 
-
-
-
-      renderer.setAnimationLoop(animate);
-      animate();
+      // renderer.setAnimationLoop(animate);
+      animate()
     }
 
     let semafore = false
@@ -219,6 +208,9 @@
       camera.updateProjectionMatrix();
       renderer.setSize( w, h );
       render();
+
+      console.log('camera position', camera.position);
+      console.log('camera rotation (radians)', camera.rotation);
     }
 
     function render() {
@@ -226,12 +218,50 @@
     }
 
 
+    const totalFrames = FPS * params.get('duration_seconds');
+    const api_key = params.get('api_key')
+    const api_secret = params.get('api_secret')
+    // logg(api_key, 'key')
+    // logg(api_secret, 'secret')
     function animate() {
-      const delta = clock.getDelta();
-      head.animate(delta * 1000);
+      const t = frame / FPS;
+      head.animate(1000/FPS);
       controls.update();
       renderer.render( scene, camera );
+      capturer.capture( renderer.domElement );
+
+      frame++;
+      if (frame < totalFrames) {
+        requestAnimationFrame(animate)
+      } else {
+        capturer.stop();
+        logg('capturer.stop')
+        capturer.save((blob) => {
+          logg(blob, 'blob')
+          const form = new FormData();
+          form.append('video', blob, 'lips.webm')
+          form.append('name', 'some-name')
+          fetch('http://localhost:3002/wco/api/videos/?api_key=' + api_key + '&api_secret=' + api_secret, {
+            method: 'POST',
+            headers: {
+              // 'Content-Type': 'video/webm',
+            },
+            body: form,
+          })
+        });
+      }
     }
+
+
+    // Speak when clicked
+    const nodeSpeak = document.getElementById('speak');
+      nodeSpeak.addEventListener('click', function () {
+        try {
+
+        } catch (error) {
+          console.log(error);
+        }
+      });
 
 
   </script>

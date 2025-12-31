@@ -34,7 +34,6 @@
     "build_kpi_1": "rollup -c rollup.app-kpi-sent-contexts.js -w",
     "build_shared": "rollup -c rollup.shared.js      -w",
     "start": "rollup -c rollup.development.js -w",
-    "start2": "webpack serve",
-    "translate_example": ""
+    "start2": "webpack serve"
   }
 }

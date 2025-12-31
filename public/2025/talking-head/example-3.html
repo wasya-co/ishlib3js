@@ -16,9 +16,9 @@
   <script type="importmap">
     { "imports":
       {
-        "three": "/2025/vendor/js/threejs/three.module.js",
-        "three/addons/": "/2025/vendor/js/threejs/jsm/",
-        "talkinghead": "/2025/vendor/js/talkinghead.mjs"
+        "three": "/vendor/javascript/threejs/three.module.js",
+        "three/addons/": "/vendor/javascript/threejs/jsm/",
+        "talkinghead": "/vendor/javascript/talkinghead.mjs"
       }
     }
   </script>
@@ -81,7 +81,7 @@
       logg(chunkedInput, 'chunkedInput')
 
       // const container = document.createElement( 'div' )
-      const loader = new GLTFLoader().setPath( '/2025/vendor/obj' )
+      const loader = new GLTFLoader().setPath( '/vendor/models' )
       scene = new THREE.Scene();
 
       /* fov — Camera frustum vertical field of view.

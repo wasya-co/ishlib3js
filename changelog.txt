@@ -5,3 +5,4 @@
 0.0.1 :: 2023-08-31 :: bumping the version b/c we're getting somewhere!
 0.0.1 :: 2025-12-23 :: it's been a while...
                        let's implement talking head.
+0.0.2 :: 2025-12-31 :: let's continue. moving things around.

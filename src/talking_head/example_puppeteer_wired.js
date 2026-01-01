@@ -9,7 +9,13 @@ const logg = (a, b="") => {
   console.log(`+++ ${b}:`, a); // eslint-disable-line no-console
 };
 
-const browser = await puppeteer.launch({ headless: true });
+const browser = await puppeteer.launch({
+  headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox'
+  ],
+});
 const page = await browser.newPage();
 
 const args = process.argv.slice(2);

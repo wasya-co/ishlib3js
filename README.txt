@@ -7,6 +7,8 @@ This is main playground for now.
 
 = Setup =
 
+   apt install -y libgbm1
+
 = Develop =
   yarn run start
 

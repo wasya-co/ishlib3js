@@ -18,9 +18,9 @@ for (const arg of args) {
   const [key, value] = arg.replace(/^--/, '').split('=');
   params[key] = value ?? true;
 }
-// logg(params, 'ze params')
+logg(params, 'ze params')
 
-const page_url = `http://localhost:8080/2025/talking-head/example-3.html?input_url=${params.input_url}&api_key=${params.api_key}&api_secret=${params.api_secret}`
+const page_url = `https://email.wasya.co/2025/talkinghead_example.html?wco_origin=${params.wco_origin}&newspartial_id=${params.newspartial_id}&api_key=${params.api_key}&api_secret=${params.api_secret}`
 logg(page_url, 'page_url')
 await page.goto(page_url);
 

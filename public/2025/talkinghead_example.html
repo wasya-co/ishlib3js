@@ -56,8 +56,8 @@
 
     const params = new URLSearchParams(window.location.search);
 
-    const w = 640;
-    const h = 480;
+    const w = 1024;
+    const h = 576;
     let config = {
         sampleRate: 8000,
         mood: 'neutral',
@@ -71,13 +71,15 @@
     let frame = 0;
     const api_key = params.get('api_key')
     const api_secret = params.get('api_secret')
+    const wco_origin = params.get('wco_origin')
+    const newspartial_id = params.get('newspartial_id')
     let totalFrames
 
     let camera, controls, head, renderer, scene;
     var capturer = new CCapture( { format: 'webm', framerate: FPS } );
 
     async function init() {
-      const url = params.get('input_url')
+      const url = wco_origin + '/wco/api/newspartials/' + newspartial_id + '/config.json?api_key=' + api_key + '&api_secret=' + api_secret
       let chunkedInput = await fetch(url).then(r => r.json())
       logg(chunkedInput, 'chunkedInput')
       const last = chunkedInput.wtimes.length-1
@@ -220,7 +222,6 @@
       renderer.render( scene, camera );
     }
 
-
     function animate() {
       const t = frame / FPS;
       head.animate(1000/FPS);
@@ -236,15 +237,23 @@
         logg('capturer.stop')
         capturer.save((blob) => {
           logg(blob, 'blob')
-          const form = new FormData();
-          form.append('video', blob, 'lips.webm')
-          form.append('name', 'some-name')
-          fetch('http://localhost:3002/wco/api/videos/?api_key=' + api_key + '&api_secret=' + api_secret, {
-            method: 'POST',
-            headers: {
-              // 'Content-Type': 'video/webm',
-            },
-            body: form,
+          renderer.domElement.toBlob((thumb) => {
+            logg(thumb, 'thumb')
+
+            const form = new FormData();
+            form.append('video', blob, 'lips.webm')
+            form.append('name', '<ccapturejs>')
+            form.append('thumb', thumb)
+            form.append('newspartial_id', newspartial_id)
+
+            fetch(wco_origin + '/wco/api/videos/?api_key=' + api_key + '&api_secret=' + api_secret, {
+              method: 'POST',
+              headers: {
+                // 'Content-Type': 'video/webm',
+              },
+              body: form,
+            })
+
           })
         });
       }

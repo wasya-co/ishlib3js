@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>test_threejs demos</title>
+  <title>talkinghead example</title>
   <style>
     body {
       background: #efefef;
@@ -37,15 +37,17 @@
   </div>
 
   <script type="module">
+    /*
+    **/
     const logg = (a, b="", c=null) => {
       if ('undefined' === typeof window) { return }
-
       c = "string" === typeof c ? c : b.replace(/\W/g, "");
       if (c.length > 0) {
         window[c] = a;
       }
       console.log(`+++ ${b}:`, a); // eslint-disable-line no-console
     };
+
 
     import * as THREE from 'three';
 
@@ -135,7 +137,7 @@
       try {
         nodeLoading.textContent = "Loading...";
         await head.showAvatar( {
-          url: 'https://models.readyplayer.me/64bfa15f0e72c63d7c3934a6.glb?morphTargets=ARKit,Oculus+Visemes,mouthOpen,mouthSmile,eyesClosed,eyesLookUp,eyesLookDown&textureSizeLimit=1024&textureFormat=png',
+          url: '/vendor/models/cyberpunk-girl.glb',
           body: 'F',
           avatarMood: 'neutral',
           lipsyncLang: 'en'

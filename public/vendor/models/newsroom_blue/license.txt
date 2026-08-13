@@ -1,0 +1,11 @@
+Model Information:
+* title:	News Studio
+* source:	https://sketchfab.com/3d-models/news-studio-5da1ee541eeb4cfd84bc860d2b8371d6
+* author:	alekseenkogalina585 (https://sketchfab.com/alekseenkogalina585)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "News Studio" (https://sketchfab.com/3d-models/news-studio-5da1ee541eeb4cfd84bc860d2b8371d6) by alekseenkogalina585 (https://sketchfab.com/alekseenkogalina585) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

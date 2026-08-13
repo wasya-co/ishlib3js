@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>talkinghead example</title>
+  <title>talkinghead recording canvas</title>
   <style>
     body {
       background: #efefef;
@@ -16,9 +16,9 @@
   <script type="importmap">
     { "imports":
       {
-        "three": "/vendor/javascript/threejs/three.module.js",
-        "three/addons/": "/vendor/javascript/threejs/jsm/",
-        "talkinghead": "/vendor/javascript/talkinghead.mjs"
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js/+esm",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+        "talkinghead": "https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@1.7/modules/talkinghead.mjs"
       }
     }
   </script>
@@ -47,6 +47,8 @@
       }
       console.log(`+++ ${b}:`, a); // eslint-disable-line no-console
     };
+
+    let avatar_url = 'https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.0.3/public/vendor/models/avatars/brunette.glb'
 
 
     import * as THREE from 'three';
@@ -137,7 +139,7 @@
       try {
         nodeLoading.textContent = "Loading...";
         await head.showAvatar( {
-          url: '/vendor/models/cyberpunk-girl.glb',
+          url: avatar_url,
           body: 'F',
           avatarMood: 'neutral',
           lipsyncLang: 'en'

@@ -7,3 +7,6 @@
                        let's implement talking head.
 0.0.2 :: 2025-12-31 :: let's continue. moving things around.
 0.0.3 :: 2026-08-04 :: canvas doesnt render, lets fix that
+0.2.0 - from 0.0.3, skip 0.1.0.
+      - only talkinghead canvas.
+

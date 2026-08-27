@@ -1,0 +1,9 @@
+
+{
+  "name": "lowpoly-mountain",
+  "position": { "x": 0, "y": -10, "z": 0 },
+  "markers": [
+    { "name": "room-1", "position": {"x": -2, "y": -3.5, "z": 2.5 } },
+    { "name": "collision-world", "position": {"x": 0, "y": -3.5, "z": 2.5 } }
+  ]
+}

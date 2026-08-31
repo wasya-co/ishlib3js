@@ -1,0 +1,61 @@
+{
+  "collision-world": {
+    "name": "collision-world"
+  },
+  "lowpoly-mountain": {
+    "name": "lowpoly-mountain",
+    "height": 100
+  },
+  "skybox_1": {
+    "name": "skybox_1",
+    "height": 30
+  },
+  "room-1": {
+    "name": "room-1",
+    "height": 6
+  },
+  "newsroom_green": {
+    "name": "newsroom_green",
+    "height": 3.3
+  },
+  "eerie-dimension": {
+    "name": "eerie-dimension"
+  },
+  "city-at-night": {
+    "name": "city-at-night"
+  },
+  "rick-and-morty-garage": {
+    "name": "rick-and-morty-garage",
+    "height": 4
+  },
+  "small-apartment": {
+    "name": "small-apartment"
+  },
+  "studio_photo": {
+    "name": "studio_photo"
+  },
+  "studio_tron": {
+    "name": "studio_tron"
+  },
+  "meshy-3": {
+    "name": "meshy-3",
+    "height": 20
+  },
+  "rocket-planet": {
+    "name": "rocket-planet"
+  },
+  "foresaken-desert": {
+    "name": "foresaken-desert",
+    "height": 120
+  },
+  "studio_colorful": {
+    "name": "studio_colorful"
+  },
+  "medieval-tavern": {
+    "name": "medieval-tavern",
+    "height": 10
+  },
+  "old-bar": {
+    "name": "old-bar"
+  }
+}

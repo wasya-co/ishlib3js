@@ -11,7 +11,7 @@
   },
   "rick-and-morty-garage": {
     "name": "rick-and-morty-garage",
-    "height": "4,",
+    "height": 4,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./003mb h4 rick-and-morty-garage/scene.glb"
   },
   "rocket-planet": {
@@ -21,7 +21,7 @@
   },
   "foresaken-desert": {
     "name": "foresaken-desert",
-    "height": "120,",
+    "height": 120,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./005mb h120 foresaken-desert/scene.glb"
   },
   "reception-desk": {
@@ -36,7 +36,7 @@
   },
   "skybox_1": {
     "name": "skybox_1",
-    "height": "30,",
+    "height": 30,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./000mb h30 skybox_1/scene.glb"
   },
   "collision-world": {
@@ -56,7 +56,7 @@
   },
   "newsroom_green": {
     "name": "newsroom_green",
-    "height": "3.3,",
+    "height": 3.3,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./001mb h33cm newsroom_green/scene.glb"
   },
   "planet-lowpoly": {
@@ -66,17 +66,17 @@
   },
   "room-1": {
     "name": "room-1",
-    "height": "6,",
+    "height": 6,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./000mb h6 room-1/scene.glb"
   },
   "lowpoly-mountain": {
     "name": "lowpoly-mountain",
-    "height": "100,",
+    "height": 100,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./000mb h100 lowpoly-mountain/scene.glb"
   },
   "medieval-tavern": {
     "name": "medieval-tavern",
-    "height": "10,",
+    "height": 10,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./006mb h10 medieval-tavern/scene.glb"
   },
   "eerie-dimension": {
@@ -91,7 +91,7 @@
   },
   "meshy-3": {
     "name": "meshy-3",
-    "height": "20,",
+    "height": 20,
     "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.3.0/public/vendor/models/./004mb h20 meshy-3/scene.glb"
   },
   "small-apartment": {

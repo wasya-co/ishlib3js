@@ -7,8 +7,12 @@ outs = {}
 Dir.glob('./00*').each do |file|
   basename = File.basename(file)
   slug = basename.split.last
-  height = "#{$1.to_i / 10.0}," if basename =~ / h(\d+)cm /
-  height = "#{$1}," if basename =~ / h(\d+) /
+  height = nil
+  if (match = basename.match(/ h(\d+)cm /))
+    height = match[1].to_i / 10.0
+  elsif (match = basename.match(/ h(\d+) /))
+    height = match[1].to_i
+  end
 
   outs[slug] = {
     name: slug,

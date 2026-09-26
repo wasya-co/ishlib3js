@@ -17,7 +17,7 @@ Dir.glob('./00*').each do |file|
   outs[slug] = {
     name: slug,
     height: height,
-    url: "#{BASE}/#{basename}/scene.glb"
+    url: "#{BASE}/scenes/#{basename}/scene.glb"
   }
 end
 

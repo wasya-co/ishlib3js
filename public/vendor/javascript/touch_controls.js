@@ -697,7 +697,7 @@ TouchControls.prototype = {
 
 };
 
-export default {
+export {
   TouchControls,
   MovementPad,
   RotationPad,

@@ -9,4 +9,5 @@
 0.0.3 :: 2026-08-04 :: canvas doesnt render, lets fix that
 0.2.0 - from 0.0.3, skip 0.1.0.
       - only talkinghead canvas.
-
+0.3.0 - many more scenes and models
+0.4.0 - merged from mac16 from a while ago

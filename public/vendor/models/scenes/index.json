@@ -2,101 +2,101 @@
   "studio_tron": {
     "name": "studio_tron",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb studio_tron/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb studio_tron"
   },
   "studio_colorful": {
     "name": "studio_colorful",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/005mb studio_colorful/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/005mb studio_colorful"
   },
   "rick-and-morty-garage": {
     "name": "rick-and-morty-garage",
     "height": 4,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb h4 rick-and-morty-garage/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb h4 rick-and-morty-garage"
   },
   "rocket-planet": {
     "name": "rocket-planet",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/004mb rocket-planet/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/004mb rocket-planet"
   },
   "foresaken-desert": {
     "name": "foresaken-desert",
     "height": 120,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/005mb h120 foresaken-desert/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/005mb h120 foresaken-desert"
   },
   "reception-desk": {
     "name": "reception-desk",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb reception-desk/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb reception-desk"
   },
   "studio_photo": {
     "name": "studio_photo",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb studio_photo/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb studio_photo"
   },
   "skybox_1": {
     "name": "skybox_1",
     "height": 30,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h30 skybox_1/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h30 skybox_1"
   },
   "collision-world": {
     "name": "collision-world",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb collision-world/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb collision-world"
   },
   "city-at-night": {
     "name": "city-at-night",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb city-at-night/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb city-at-night"
   },
   "terrain-lowpoly": {
     "name": "terrain-lowpoly",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb terrain-lowpoly/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb terrain-lowpoly"
   },
   "newsroom_green": {
     "name": "newsroom_green",
     "height": 3.3,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/001mb h33cm newsroom_green/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/001mb h33cm newsroom_green"
   },
   "planet-lowpoly": {
     "name": "planet-lowpoly",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/001mb planet-lowpoly/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/001mb planet-lowpoly"
   },
   "room-1": {
     "name": "room-1",
     "height": 6,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h6 room-1/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h6 room-1"
   },
   "lowpoly-mountain": {
     "name": "lowpoly-mountain",
     "height": 100,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h100 lowpoly-mountain/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb h100 lowpoly-mountain"
   },
   "medieval-tavern": {
     "name": "medieval-tavern",
     "height": 10,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/006mb h10 medieval-tavern/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/006mb h10 medieval-tavern"
   },
   "eerie-dimension": {
     "name": "eerie-dimension",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/002mb eerie-dimension/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/002mb eerie-dimension"
   },
   "planet-lowpoly-0": {
     "name": "planet-lowpoly-0",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb planet-lowpoly-0/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/000mb planet-lowpoly-0"
   },
   "meshy-3": {
     "name": "meshy-3",
     "height": 20,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/004mb h20 meshy-3/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/004mb h20 meshy-3"
   },
   "small-apartment": {
     "name": "small-apartment",
     "height": null,
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb small-apartment/scene.glb"
+    "path": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models/scenes/003mb small-apartment"
   }
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'json'
 
-BASE = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.1/public/vendor/models"
+BASE = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.4/public/vendor/models"
 
 outs = {}
 Dir.glob('./00*').each do |file|
@@ -17,7 +17,7 @@ Dir.glob('./00*').each do |file|
   outs[slug] = {
     name: slug,
     height: height,
-    url: "#{BASE}/scenes/#{basename}/scene.glb"
+    path: "#{BASE}/scenes/#{basename}"
   }
 end
 

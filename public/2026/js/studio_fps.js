@@ -785,14 +785,11 @@ function reset_player() {
 
 const loader = new GLTFLoader()
 
-function specsheet_url(glb_url) {
-  return glb_url.replace(/[^/]+$/, 'specsheet.json')
-}
-
-async function load_specsheet(glb_url) {
+async function load_specsheet(url) {
+  // logg(url, 'load_specsheet()...')
   specsheet = null
   try {
-    const res = await fetch(specsheet_url(glb_url))
+    const res = await fetch(`${url}/specsheet.json`)
     if (!res.ok) return
     specsheet = await res.json()
     logg(specsheet, 'specsheet')
@@ -801,57 +798,19 @@ async function load_specsheet(glb_url) {
   }
 }
 
-function buffer_to_base64(buffer) {
-  const bytes = new Uint8Array(buffer)
-  let binary = ''
-  const chunk = 0x8000
-  for (let i = 0; i < bytes.length; i += chunk) {
-    binary += String.fromCharCode.apply(null, bytes.subarray(i, Math.min(i + chunk, bytes.length)))
-  }
-  return btoa(binary)
-}
-
-function base64_to_buffer(base64) {
-  const binary = atob(base64)
-  const bytes = new Uint8Array(binary.length)
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i)
-  return bytes.buffer
-}
-
-async function gltf_from_buffer(buffer, url) {
-  return loader.parseAsync(buffer, url.replace(/[^/]+$/, ''))
-}
-
-async function load_model(s, cfg) {
-  const key = s && s.name
-  if (key) {
-    try {
-      const cached = localStorage.getItem(key)
-      if (cached) return await gltf_from_buffer(base64_to_buffer(cached), cfg.url)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  const res = await fetch(cfg.url)
-  if (!res.ok) throw new Error(`${res.status} ${cfg.url}`)
-  const buffer = await res.arrayBuffer()
-  if (key) {
-    try { localStorage.setItem(key, buffer_to_base64(buffer)) } catch (error) { console.log(error) }
-  }
-  return gltf_from_buffer(buffer, cfg.url)
-}
-
 async function load_studio(s) {
+  logg(s, 'load_studio()...')
+
   const cfg = scene_cfg(s)
   if (studio && studio.parent) studio.parent.remove(studio)
   if (octree_helper && octree_helper.parent) octree_helper.parent.remove(octree_helper)
-  const gltf = await load_model(s, cfg)
+  const gltf = await loader.loadAsync(`${cfg.url}/scene.glb`)
   await load_specsheet(cfg.url)
   studio = gltf.scene
   if (cfg.height) rescale(studio, { height: cfg.height })
   apply_studio_mesh(studio)
   const pos = specsheet && specsheet.position
-  if (pos) studio.position.set(pos.x || 0, pos.y || 0, pos.z || 0)
+  if (pos) studio.position.set(pos.x, pos.y, pos.z)
   scene.add(studio)
   worldOctree = new Octree()
   worldOctree.fromGraphNode(studio)
@@ -862,7 +821,7 @@ async function load_studio(s) {
 }
 
 async function select_studio(name) {
-  if (!scenes[name] || studio_loading) return
+  if (studio_loading) return
   studio_loading = true
   localStorage.setItem(SCENE_STOR, name)
   scene_url = scenes[name]
@@ -889,9 +848,7 @@ if (!$('select.studio').val()) $('select.studio').val(initial_studio)
 select_studio(initial_studio)
 
 function teleportPlayerIfOob() {
-
   if ( camera.position.y <= - 25 ) {
-
     playerCollider.start.set( 0, 0.35, 0 );
     playerCollider.end.set( 0, 1, 0 );
     playerCollider.radius = 0.35;
@@ -901,9 +858,7 @@ function teleportPlayerIfOob() {
       touch_controls.setPosition( 0, 1, 0 )
       touch_controls.setRotation( 0, 0 )
     }
-
   }
-
 }
 
 function touch_pad_controls( deltaTime ) {

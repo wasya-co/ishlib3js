@@ -12,6 +12,8 @@ This is main playground for now.
 = Develop =
   yarn run start
 
+  python3 -m http.server 8000
+
 = Test =
 
 = Build/Deploy =

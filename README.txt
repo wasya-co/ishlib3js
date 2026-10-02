@@ -14,6 +14,9 @@ This is main playground for now.
 
   python3 -m http.server 8000
 
+  git tag -a v0.4.7 -m "Release v0.4.7"
+  git push origin v0.4.7
+
 = Test =
 
 = Build/Deploy =

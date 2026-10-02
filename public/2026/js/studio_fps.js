@@ -10,7 +10,7 @@ const logg = (a, b="", c=null) => {
 
 // const MODELS_ROOT = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.0/public/vendor/models"
 const SCENE_STOR = 'studio'
-const scenes = await fetch('https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.3/public/vendor/models/scenes/index.json').then(r => r.json())
+const scenes = await fetch('https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.5/public/vendor/models/scenes/index.json').then(r => r.json())
 $.each(scenes, (name) => {
   $('<option>', { value: name, text: name }).appendTo($('select.studio'))
 })
@@ -53,10 +53,13 @@ import { OctreeHelper } from 'three/addons/helpers/OctreeHelper.js';
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 
-window.THREE = THREE
-const TouchControls = window.TouchControls
-const MovementPad = window.MovementPad
-const RotationPad = window.RotationPad
+window.THREE = THREE;
+
+import {
+  TouchControls,
+  MovementPad,
+  RotationPad,
+} from 'TouchControls';
 
 const timer = new THREE.Timer();
 timer.connect( document );
@@ -785,12 +788,14 @@ function reset_player() {
 
 const loader = new GLTFLoader()
 
-async function load_specsheet(url) {
-  // logg(url, 'load_specsheet()...')
+async function load_specsheet(cfg) {
+  // logg(cfg, 'load_specsheet()...')
   specsheet = null
   try {
-    const res = await fetch(`${url}/specsheet.json`)
-    if (!res.ok) return
+    const res = await fetch(`${cfg.path}/specsheet.json`)
+    if (!res.ok) {
+      return {}
+    }
     specsheet = await res.json()
     logg(specsheet, 'specsheet')
   } catch (error) {
@@ -798,14 +803,14 @@ async function load_specsheet(url) {
   }
 }
 
-async function load_studio(s) {
-  logg(s, 'load_studio()...')
+async function load_studio(cfg) {
+  logg(cfg, 'load_studio()...')
 
-  const cfg = scene_cfg(s)
   if (studio && studio.parent) studio.parent.remove(studio)
   if (octree_helper && octree_helper.parent) octree_helper.parent.remove(octree_helper)
-  const gltf = await loader.loadAsync(`${cfg.url}/scene.glb`)
-  await load_specsheet(cfg.url)
+
+  const gltf = await loader.loadAsync(`${cfg.path}/scene.glb`)
+  await load_specsheet(cfg)
   studio = gltf.scene
   if (cfg.height) rescale(studio, { height: cfg.height })
   apply_studio_mesh(studio)
@@ -821,14 +826,18 @@ async function load_studio(s) {
 }
 
 async function select_studio(name) {
+  logg(name, 'select_studio()...')
+
   if (studio_loading) return
   studio_loading = true
   localStorage.setItem(SCENE_STOR, name)
-  scene_url = scenes[name]
+  scene_cfg = scenes[name]
+  logg(scene_cfg, 'scene_cfg')
+
   $('#status').text('Loading...')
   $('#loading').text('Loading...')
   try {
-    await load_studio(scene_url)
+    await load_studio(scene_cfg)
     reset_player()
     $('#status').text('loaded')
     $('#loading').text('loaded')

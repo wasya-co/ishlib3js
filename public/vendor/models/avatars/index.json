@@ -1,22 +1,22 @@
 {
   "brunette": {
     "type": "F",
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models/avatars/brunette/model.glb"
+    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.11/public/vendor/models/avatars/brunette/model.glb"
   },
   "cara": {
     "type": "F",
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models/avatars/cara/model.glb"
+    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.11/public/vendor/models/avatars/cara/model.glb"
   },
   "eve": {
     "type": "F",
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models/avatars/eve/model.glb"
+    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.11/public/vendor/models/avatars/eve/model.glb"
   },
   "denis": {
     "type": "M",
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models/avatars/denis/model.glb"
+    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.11/public/vendor/models/avatars/denis/model.glb"
   },
   "gregor": {
     "type": "M",
-    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models/avatars/gregor/model.glb"
+    "url": "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@0.4.11/public/vendor/models/avatars/gregor/model.glb"
   }
 }

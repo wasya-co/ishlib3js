@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'json'
 
-MODELS_ROOT = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.8/public/vendor/models"
+ISH_VERSION = '0.4.11'
+MODELS_ROOT = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@#{ISH_VERSION}/public/vendor/models"
 opts = {
   'brunette' => { type: 'F' },
   'cara' => { type: 'F' },

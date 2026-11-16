@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'json'
 
-BASE = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@v0.4.4/public/vendor/models"
+ISH_VERSION = 'v0.4.14'
+BASE = "https://cdn.jsdelivr.net/gh/wasya-co/ishlib3js@#{ISH_VERSION}/public/vendor/models"
 
 outs = {}
 Dir.glob('./00*').each do |file|
